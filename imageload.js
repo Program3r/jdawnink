@@ -10,6 +10,7 @@ if(Meteor.isClient){
             jdesc.append(desc);
             $(jdesc.find('p')[0]).remove();
             $(jdesc.find('p')[1]).remove();
+            jdesc.find('img').attr('src',jdesc.find('img').attr('src').replace('_m','_n')+'?_='+stamp);
             jdesc.find('img').attr('width','').attr('height','').attr('onload','javascript:reload();');
             filtereditems.push({src:photo,desc:jdesc.html()});
         }

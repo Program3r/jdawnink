@@ -5,6 +5,24 @@ p{
     margin:0px !important;
 }
 
+#imgdisp {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#background {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
 
 .isotope,
 .isotope .isotope-item {
@@ -14,6 +32,7 @@ p{
       -ms-transition-duration: 0.8s;
        -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
+    padding:5px;
 }
 
 .isotope {

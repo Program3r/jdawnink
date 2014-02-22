@@ -1,13 +1,32 @@
 <body>
+    {{>background}}
     <section>
         {{>navbar}}
     </section>
-    <section>
-        {{>imageDisplay}}
-    </section>
+    <div id='logo'>
+        {{>banner}}
+    </div>
+    <div class='zoomViewport'>
+        <div class='zoomContainer'>
+            <div class='zoomTarget'>    
+                <section id='imgdisp'>
+                    {{>imageDisplay}}
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 
-
+<template name="banner">
+    <header class="main-header" role="banner">
+        <img src="http://i.imgur.com/SJgIji2.png" alt="Click here to view my iStockPhoto account!" href="http://www.istockphoto.com/jdawnink" />
+    </header>
+</template>
+<template name="background">
+    <div id="background">
+        <img src="http://i.imgur.com/XYeQ9Tw.png" class="stretch" alt="" />
+    </div>
+</template>
 
 <template name="navbar">
 
@@ -19,41 +38,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </a>
-                  <a class="brand" href="#">Title</a>
+                  <a class="brand" href="#"></a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav">
-                      <li class="active"><a href="#">Home</a></li>
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li class="nav-header">Nav header</li>
-                          <li><a href="#">Separated link</a></li>
-                          <li><a href="#">One more separated link</a></li>
-                        </ul>
-                      </li>
+                      <li class="active"><a href="#">Portfolio</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
                     </ul>
-                    <form class="navbar-search pull-left" action="">
-                      <input type="text" class="search-query span2" placeholder="Search">
-                    </form>
                     <ul class="nav pull-right">
-                      <li><a href="#">Link</a></li>
+                      <li><a href="#">Placeholder Link</a></li>
                       <li class="divider-vertical"></li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                        </ul>
-                      </li>
                     </ul>
                   </div><!-- /.nav-collapse -->
                 </div>
