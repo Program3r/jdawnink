@@ -6,15 +6,9 @@
     <div id='logo'>
         {{>banner}}
     </div>
-    <div class='zoomViewport'>
-        <div class='zoomContainer'>
-            <div class='zoomTarget'>    
-                <section id='imgdisp'>
-                    {{>imageDisplay}}
-                </section>
-            </div>
-        </div>
-    </div>
+    <section id='imgdisp'>
+        {{>imageDisplay}}
+    </section>
 </body>
 
 <template name="banner">
@@ -55,15 +49,17 @@
             </div>
 </template>
 <template name="imageDisplay">
-    <div class="image-container">
-        {{#each images}}
-            {{>image}}
-        {{/each}}
+    <div class='zoomViewport'>
+        <div class="image-container zoomContainer">
+            {{#each images}}
+                {{>image}}
+            {{/each}}
+        </div>
     </div>
 </template>
 
 <template name="image">
-    <div class="profile-image">
+    <div class="profile-image zoomTarget" data-closeclick="true" data-targetsize="0.4">
         {{{desc}}}
     </div>
 </template>
