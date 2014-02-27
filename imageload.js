@@ -1,4 +1,6 @@
 if (Meteor.isClient) {
+
+
     jsonFlickrFeed = function (json) {
         var filtereditems = [];
         for (i = 0; i < json.items.length; i++) {
@@ -13,9 +15,7 @@ if (Meteor.isClient) {
             jdesc.find('a').parent().append(jdesc.find("img"));
             jdesc.find('a').remove();
             $('.image-container').isotope('reLayout');
-            //jdesc.find('img').attr('src', jdesc.find('img').attr('src').replace('_m', '_n') + '?_=' + stamp);
-            jdesc.find('img').attr('src', jdesc.find('img').attr('src').replace('_m', '_n'));
-            jdesc.find('img').attr('width', '').attr('height', '').attr('onload', 'Meteor.call("reLayout")');
+            //jdesc.find('img').attr('width', '').attr('height', '').attr('onload', 'Meteor.call("reLayout")');
             filtereditems.push({
                 src: photo,
                 desc: jdesc.html()
@@ -25,6 +25,13 @@ if (Meteor.isClient) {
 
     }
 
+
+    Template.image.srcM = function(){
+        return this.src.replace('_b', '_n');
+    }
+    Template.image.id = function(){
+        return this.src.substring(this.src.lastIndexOf("/")+1, this.src.lastIndexOf("."));
+    }
     Template.imageDisplay.images = function () {
         return Session.get('photos');
     }
@@ -32,14 +39,6 @@ if (Meteor.isClient) {
     Meteor.methods({
         'reLayout': function () {
             $('.image-container').isotope('reLayout');
-            $(".zoomTarget").zoomTarget();
-            $(".profile-image").click(function(){
-                if($(".profile-image.selectedZoomTarget").length == 0){
-                    $(".image-container").css({top:'-650px'});
-                }else{
-                    $(".image-container").css({top:'0px'});
-                }
-            });
         }
     })
 

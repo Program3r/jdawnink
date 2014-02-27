@@ -1,29 +1,28 @@
 <body>
-    {{>background}}
     <section>
         {{>navbar}}
     </section>
     <div id='logo'>
         {{>banner}}
     </div>
+            {{page "home" "page"}}
+    <div id="page">
+
+    </div>
     <section id='imgdisp'>
         {{>imageDisplay}}
     </section>
 </body>
-
+<template name="home">
+    My Home!
+</template>
 <template name="banner">
     <header class="main-header" role="banner">
         <img src="http://i.imgur.com/SJgIji2.png" alt="Click here to view my iStockPhoto account!" href="http://www.istockphoto.com/jdawnink" />
     </header>
 </template>
-<template name="background">
-    <div id="background">
-        <img src="http://i.imgur.com/XYeQ9Tw.png" class="stretch" alt="" />
-    </div>
-</template>
 
 <template name="navbar">
-
         <div class="navbar">
               <div class="navbar-inner">
                 <div class="container">
@@ -49,17 +48,32 @@
             </div>
 </template>
 <template name="imageDisplay">
-    <div class='zoomViewport'>
-        <div class="image-container zoomContainer">
-            {{#each images}}
-                {{>image}}
-            {{/each}}
-        </div>
+    <div class="image-container">
+        {{#each images}}
+            {{>image}}
+        {{/each}}
     </div>
 </template>
 
 <template name="image">
-    <div class="profile-image zoomTarget" data-closeclick="true" data-targetsize="0.4">
-        {{{desc}}}
+        <div id="{{id}}" class="modal hide fade fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3></h3>
+            </div>
+            <div class="modal-body">
+                <img src="{{src}}">
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+    <div class="profile-image">
+        <a href="#{{id}}" data-toggle="modal"><img src="{{srcM}}" onload="Meteor.call('reLayout')"></a>
+
+
+
+    <!-- Modal -->
+
     </div>
 </template>
