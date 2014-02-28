@@ -39,6 +39,7 @@ if (Meteor.isClient) {
     Meteor.methods({
         'reLayout': function () {
             $('.image-container').isotope('reLayout');
+            $("a[rel^='prettyPhoto']").prettyPhoto();
         }
     })
 
@@ -67,9 +68,5 @@ if (Meteor.isClient) {
                     columnWidth: 1
                 }
             });
-    }
-
-    Template.image.rendered = function () {
-
     }
 }
