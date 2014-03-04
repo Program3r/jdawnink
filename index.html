@@ -1,21 +1,46 @@
 <body>
+    {{>layout}}
+</body>
+
+<template name="layout">
     <section>
         {{>navbar}}
     </section>
     <div id='logo'>
         {{>banner}}
     </div>
-            {{page "home" "page"}}
-    <div id="page">
+       {{yield}}
 
-    </div>
-    <section id='imgdisp'>
+</template>
+
+
+
+
+<template name="home">
+    <section id='imgdisp' class="pagecontent">
+    <div class="progress progress-dark" style="display:none;">
+  <div class="bar" id="image-progress" style="width: 0%;"></div>
+</div>
         {{>imageDisplay}}
     </section>
-</body>
-<template name="home">
-    My Home!
 </template>
+
+<template name="about">
+    <div class='pagecontent'>
+        About Page
+    </div>
+</template>
+
+
+<template name="contact">
+    <div class='pagecontent'>
+        Contact Page
+    </div>
+</template>
+
+
+
+
 <template name="banner">
     <header class="main-header" role="banner">
         <img src="http://i.imgur.com/SJgIji2.png" alt="Click here to view my iStockPhoto account!" href="http://www.istockphoto.com/jdawnink" />
@@ -34,11 +59,11 @@
                   <a class="brand" href="#"></a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav">
-                      <li class="active"><a href="#">Portfolio</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Contact</a></li>
+                      <li class="{{page 'home'}}"><a href="/" id="home">Portfolio</a></li>
+                      <li><a class="{{page 'about'}}" href="about">About</a></li>
+                      <li><a class="{{page 'contact'}}" href="contact">Contact</a></li>
                     </ul>
-                    <ul class="nav pull-right">
+                    <ul class="nav pull-right" style='display:none;'>
                       <li><a href="#">Placeholder Link</a></li>
                       <li class="divider-vertical"></li>
                     </ul>
@@ -48,16 +73,21 @@
             </div>
 </template>
 <template name="imageDisplay">
-    <div class="image-container">
-        {{#each images}}
-            {{>image}}
-        {{/each}}
+    {{#constant}}
+        <div class="image-container">
+
+        </div>
+    {{/constant}}
+    <div style="display:none">
+        {{>imageLoader}}
     </div>
 </template>
-
-<template name="image">
-    <div class="profile-image">
-        <a href="{{src}}" rel="prettyPhoto"><img src="{{srcM}}" onload="Meteor.call('reLayout')"></a>
-
-    </div>
+<template name="imageLoader">
+    {{#each images}}
+        <div class="profile-image" id="{{id}}">
+            <a href="{{src}}" rel="prettyPhoto">
+                <img src="{{src}}" width="200px" onload="isotopeImage('{{id}}')">
+            </a>
+        </div>
+    {{/each}}
 </template>
