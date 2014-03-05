@@ -10,6 +10,11 @@ if (Meteor.isClient) {
                 columnWidth: 1
             }
         });
+        Session.set('page', 'none');
+        $("#navigation a").click(function(){
+            console.log('setting')
+            Session.set('page', location.pathname)
+        })
     });
     var count = 0;
     isotopeImage = function (id) {
@@ -39,7 +44,7 @@ if (Meteor.isClient) {
               $('.image-container').isotope('reLayout');
             }, 1000)
         }else{
-           $("#image-progress").parent().slideDown(); 
+           $("#image-progress").parent().slideDown();
         }
 
         var progress = (100 / max) * count;
@@ -55,9 +60,9 @@ if (Meteor.isClient) {
         return photos.find({});
     }
     Template.navbar.page = function(page){
-        //if(page == Router.current().template){
-            //return "active";
-        //}
+        if(Session.get('page') == Router.path(page)){
+            return "active";
+        }
     }
 }
 if (Meteor.isServer) {
