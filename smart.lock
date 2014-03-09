@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "npm": {},
-      "iron-router": {}
+      "iron-router": {},
+      "fast-render": {}
     },
     "packages": {
       "npm": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.4",
         "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.1.16",
+        "commit": "e08aa22d76f25bb43e9d0f8bee3880c686f62b2b"
       }
     }
   }

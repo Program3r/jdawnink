@@ -1,3 +1,24 @@
+
+<head>
+    <title>jDawn Ink</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+    <meta name="description" content="Awesome Description Here">
+
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+
+    <meta name="keywords" content="tag, tag, tag, tag">
+
+
+    <meta name="author" content="jDawn Ink">
+</head>
+
 <body>
     {{>layout}}
 </body>
@@ -160,9 +181,9 @@
                   <a class="brand" href="#"></a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav">
-                      <li class="{{page 'home'}}"><a href="/" id="home">Portfolio</a></li>
-                      <li><a class="{{page 'about'}}" href="about">About</a></li>
-                      <li><a class="{{page 'contact'}}" href="mailto:jdawnink@gmail.com">Contact</a></li>
+                      <li class="{{isRoute 'home'}}"><a href="/" id="home">Portfolio</a></li>
+                      <li class="{{isRoute 'about'}}"><a href="about">About</a></li>
+                      <li class="{{isRoute 'contact'}}"><a href="mailto:jdawnink@gmail.com">Contact</a></li>
                     </ul>
                     <ul class="nav pull-right" style='display:none;'>
                       <li><a href="#">Placeholder Link</a></li>

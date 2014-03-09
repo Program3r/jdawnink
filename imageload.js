@@ -1,6 +1,18 @@
 photos = new Meteor.Collection("photos");
 
 if (Meteor.isClient) {
+    Handlebars.registerHelper('isRoute', function (route) {
+        var currentRoute = Router.current();
+
+        if(currentRoute != undefined){
+            if(currentRoute.route.name == route){
+                return 'active';
+            }
+        }else{
+            return '';
+        }
+    });
+
     Meteor.startup(function () {
         Meteor.call('getPhotos');
         $('.image-container').isotope({

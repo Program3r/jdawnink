@@ -10,3 +10,5 @@ preserve-inputs
 bootstrap
 npm
 iron-router
+fast-render
+spiderable
