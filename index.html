@@ -39,9 +39,9 @@
 
 <template name="home">
     <section id='imgdisp' class="pagecontent">
-    <div class="progress progress-dark" style="display:none;">
-  <div class="bar" id="image-progress" style="width: 0%;"></div>
-</div>
+        <div class="progress progress-dark" style="display:none;">
+            <div class="bar" id="image-progress" style="width: 0%;"></div>
+        </div>
         {{>imageDisplay}}
     </section>
 </template>
@@ -63,7 +63,7 @@
             Marketing &amp; Communications department of various corporations such
             as the Hotel &amp; Travel Industry and Financial Industry. Later in my
             career, I established myself as a fine artist and Illustrator. I have a
-            large portfolio of digital illustrations <a href="http://www.istockphoto.com/jdawnink"target="_istockphoto2">here</a>. I specialize in typography,
+            large portfolio of digital illustrations <a href="http://www.istockphoto.com/search/portfolio/5903637/?facets=%7B%2225%22%3A%226%22%7D#2a8d1ba"target="_istockphoto2">here</a>. I specialize in typography,
             hand-lettering, vintage and retro designs. My work is primarily focused
             in digital and vector-based design mediums. I have developed a niche market
             and drawing style which you will see within the works featured on my website.</div>
@@ -164,7 +164,7 @@
 
 <template name="banner">
     <header class="main-header" role="banner">
-    <a href="http://www.istockphoto.com/jdawnink"target="_istockphoto">
+    <a href="http://www.istockphoto.com/search/portfolio/5903637/?facets=%7B%2225%22%3A%226%22%7D#2a8d1ba"target="_istockphoto">
         <img src="http://i.imgur.com/SJgIji2.png" alt="Click here to view my iStockPhoto account!" href="http://www.istockphoto.com/jdawnink"/></a>
     </header>
 </template>
@@ -181,9 +181,15 @@
                   <a class="brand" href="#"></a>
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav">
+<<<<<<< HEAD
                       <li class="{{isRoute 'home'}}"><a href="/" id="home">Portfolio</a></li>
                       <li class="{{isRoute 'about'}}"><a href="about">About</a></li>
                       <li class="{{isRoute 'contact'}}"><a href="mailto:jdawnink@gmail.com">Contact</a></li>
+=======
+                      <li class="{{page 'home'}}"><a href="/" id="home">Portfolio</a></li>
+                      <li class="{{page 'about'}}"><a href="about">About</a></li>
+                      <li><a class="{{page 'contact'}}" href="mailto:jdawnink@gmail.com">Contact</a></li>
+>>>>>>> ce76317fb82e18c00436a7cb32b100c2bd354755
                     </ul>
                     <ul class="nav pull-right" style='display:none;'>
                       <li><a href="#">Placeholder Link</a></li>
