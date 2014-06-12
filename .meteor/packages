@@ -6,9 +6,7 @@
 standard-app-packages
 autopublish
 insecure
-preserve-inputs
 bootstrap
 npm
 iron-router
-fast-render
 spiderable
